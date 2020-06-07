@@ -134,7 +134,7 @@ typedef union test_un_ {
 - (void) useUnknownStr:(void*)str_vp {
     unknown_str *str_p = (unknown_str*)str_vp;
     unknown_str str = str_p[0];
-    
+
     printf("%f\n", str.rect.origin.x);
 }
 
@@ -147,7 +147,7 @@ typedef union test_un_ {
 }
 
 - (int) useImp:(IMP)imp withA:(int)a andB:(int)b {
-    return (int)imp(self, @selector(getSumOf:and:), a, b);
+    return (int)((IMP)imp(self, @selector(getSumOf:and:), a, b));
 }
 
 /******************** </UNKNOWN TYPE TESTS> ***********************/
